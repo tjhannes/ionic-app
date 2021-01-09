@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tagebuch
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+  <div id="container">
+    <!-- <strong class="capitalize">Tagebuch</strong> -->
+    <img src="/assets/line-chart.png" /> 
+    <p>Verlauf der letzten 7 Tage</p>
+
+    <ion-list> 
+        <ion-item-sliding *ngFor="let entry of entries" >
+          
+          <ion-item [routerLink]="['/home/tabs/diary/detail/' + entry.key]">
+              <ion-avatar slot="start">
+                <img src="/assets/smiley5.png">
+              </ion-avatar>
+              <ion-label>
+                <h2>{{entry.title}}</h2>
+                <h3>{{entry.content}}</h3>
+              </ion-label>
+          </ion-item>
+
+            <ion-item-options slide="end">
+              <ion-item-option color="danger" (click)="deleteEntry(entry)">Löschen</ion-item-option>
+              
+            </ion-item-options>
+
+        </ion-item-sliding>
+    </ion-list>
+
+    </div>  
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+        <ion-fab-button [routerLink]="[ '/home/tabs/diary/new' ]" color="light">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+  
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>
+      Meditation
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="stories-card" scrollX="true">
+    <ion-list lines="none" class="story-list scrollX" *ngFor="let story of musics" >
+      <ion-item lines="none" class="story-item" (click)="playMusic(story.id)">
+        <ion-avatar class="story-avatar" [ngClass]="{'seen': false}">
+          <img [src]="story.image">
+          
+        </ion-avatar>
+        
+        <ion-text color="primary">
+          {{story.author}}
+        </ion-text>
+      
+      </ion-item>
+      <div class="music-text">
+      <ion-text color="primary">
+          {{story.song}}
+     </ion-text>
+    </div>
+    </ion-list>
+  </ion-card>
+
+
+  
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    
+  
+
+  <ion-toolbar mode="ios" class="music-toolbar" *ngIf="music.show">
+    <ion-progress-bar [type]="!music.isPlaying && !music.id ? 'indeterminate' : 'determinate'" [value]="progress">
+    </ion-progress-bar>
+    <ion-buttons slot="start" class="music-toolbar-buttons">
+      <ion-button color="primary" class="music-toolbar-button" [disabled]="!music.isPlaying && !music.id"
+        (click)="toggleMusic($event)">
+        <ion-icon slot="icon-only" [name]="music.isPlaying ? 'pause' : 'play'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="music-toolbar-title" (touchstart)="openMusicModal($event)" (click)="openMusicModal($event)">
+      {{music.author}}
+      <p class="ion-no-margin">
+        {{music.song}}
+      </p>
+    </ion-title>
+    <ion-buttons slot="end" class="music-toolbar-buttons">
+      <ion-button color="medium" class="music-toolbar-button" (click)="closePlayer()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-footer>

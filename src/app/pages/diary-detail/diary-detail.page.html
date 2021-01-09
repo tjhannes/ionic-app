@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="[ '/home/tabs/diary' ]">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Detail
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    
+    <ion-card-header>
+      <ion-card-title>{{ title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ content }}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
