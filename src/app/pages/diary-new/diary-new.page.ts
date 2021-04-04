@@ -17,7 +17,7 @@ export class DiaryNewPage implements OnInit {
   constructor(public entryService: EntryService, private router: Router) { }
 
   goBack() {
-    this.router.navigate(['/home/tabs/diary'])
+    this.router.navigate(['/home/tabs/tab1'])
   }
 
   ngOnInit() {

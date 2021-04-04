@@ -1,0 +1,2 @@
+cd ionic\ionic-relax.git\trunk
+ionic lab

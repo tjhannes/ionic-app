@@ -4,25 +4,28 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #000000;
-  --ion-color-primary-rgb: 165, 181, 191;
-  --ion-color-primary-contrast: #000000;
-  --ion-color-primary-contrast-rgb: 0,0,0;
+  // background color
+  --ion-color-primary: #b8d6d4;
+  --ion-color-primary-rgb: 184, 214, 212;
+  // text color (e.g. selected tab)
+  --ion-color-primary-contrast: #EF784E;
+  // text color (e.g. normal tab)
+  --ion-color-primary-contrast-rgb: 255,255,255;
   --ion-color-primary-shade: #A5B5BF;
   --ion-color-primary-tint: #A5B5BF;
 
   /** secondary **/
-  --ion-color-secondary: #B8E2C8;
-  --ion-color-secondary-rgb: 184, 226, 200;
-  --ion-color-secondary-contrast: #000000;
-  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary: #EF784E;
+  --ion-color-secondary-rgb: 239, 120, 78;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #B8E2C8;
   --ion-color-secondary-tint: #B8E2C8;
 
   /** tertiary **/
-  --ion-color-tertiary: #B0A1BA;
+  --ion-color-tertiary: #70A9B0;
   --ion-color-tertiary-rgb: 176, 161, 186;
-  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 1, 1, 1;
   --ion-color-tertiary-shade: #B0A1BA;
   --ion-color-tertiary-tint: #B0A1BA;
@@ -76,7 +79,7 @@
   --ion-color-light-tint: #f5f6f9;
 
   // custom
-  --ion-background-color: #90B6B2;
+  --ion-background-color: #ffffff;
   $card-md-header-color: #fff;
   $card-ios-header-color: #fff;
   
@@ -242,7 +245,7 @@
 }
 
 
-#container {
+.container {
   text-align: center;
   position: absolute;
   left: 0;
@@ -251,8 +254,12 @@
   transform: translateY(-50%);
 }
 
-#container a {
+.container a {
   text-decoration: none;
+}
+
+.white {
+  color: #ffffff;
 }
 
 .skill-card {
@@ -278,4 +285,33 @@
   display: flex; 
   justify-content: center; 
   align-items: center;
+}
+
+.tab-icon {
+  width:30%;
+} 
+
+.text-on-img {
+  background-image: url("/assets/img/img101.png");
+  height: 300px;
+  color: #ffffff;
+  margin: 20px;
+  margin-bottom: -30px;
+  border-radius: 15px;
+}
+
+.box-blue {
+  background-color: var(--ion-color-tertiary);
+  padding: 20px;
+  margin: 20px;
+  margin-top: 0px;
+  border-radius: 15px;
+}
+
+.form-box {
+  background-color: var(--ion-color-tertiary);
+  margin:10px;
+  padding: 10px;
+  padding-right:30px;
+  border-radius: 15px;
 }

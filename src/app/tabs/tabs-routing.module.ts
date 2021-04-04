@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       // Tab 1
       {
-        path: 'diary',
+        path: 'tab1',
         children: [
           {
             path: '',
-            loadChildren: () => import('./diary/diary.module').then( m => m.DiaryPageModule)
+            loadChildren: () => import('./tab1/tab1.module').then( m => m.Tab1PageModule)
           },
           {
             path: 'new',
@@ -27,49 +27,49 @@ const routes: Routes = [
       },
       // Tab 2
       {
-        path: 'meditation',
+        path: 'tab2',
         children: [
           {
             path: '',
-            loadChildren: () => import('./music/music.module').then( m => m.MusicPageModule)
+            loadChildren: () => import('./tab2/tab2.module').then( m => m.Tab2PageModule)
           }
         ]
       },
       // Tab 3
       {
-        path: 'skills',
+        path: 'tab3',
         children: [
           {
             path: '',
-            loadChildren: () => import('./skills/skills.module').then( m => m.SkillsPageModule)
+            loadChildren: () => import('./tab3/tab3.module').then( m => m.Tab3PageModule)
           }
         ]
       },
       // Tab 4
       {
-        path: 'me',
+        path: 'tab4',
         children: [
           {
             path: '',
-            loadChildren: () => import('./me/me.module').then( m => m.MePageModule)
+            loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: 'diary',
+        redirectTo: 'tab1',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'tabs/diary',
+    redirectTo: 'tabs/tab1',
     pathMatch: 'full'
   },
   {
-    path: 'me',
-    loadChildren: () => import('./me/me.module').then( m => m.MePageModule)
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
   }
 ];
 
